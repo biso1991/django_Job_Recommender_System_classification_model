@@ -21,8 +21,8 @@ def job_list(request):
     return render(request, 'job/job_list.html',context ) 
 
 
-def job_details(request, id):
-    only_job = job.objects.get(id=id) # return get 1 response for job but return  filter multi jobs 
+def job_details(request, slug):
+    only_job = job.objects.get(slug=slug) # return get 1 response for job but return  filter multi jobs 
     print("###################################################",only_job.id)
     context={
         "unique_job":only_job

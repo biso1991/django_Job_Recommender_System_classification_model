@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 import os
+from django.utils.text import slugify
 # Create your models here.
 '''django model field
     -html widget
@@ -39,7 +40,14 @@ class job(models.Model):# jobs table
     experiences = models.IntegerField(default=0)
     catagorys = models.ForeignKey(Categorys, on_delete=models.CASCADE)
     image = models.ImageField(upload_to = upload_image) 
-    # 
+    slug= models.SlugField(blank=True, null=True)
+
+    
+    def save (self, *args, **kwargs) :
+        self.slug = slugify(self.title)
+        super(job, self).save(*args,**kwargs)   # 
+    
+    
     def __str__(self):
         return self.title
 

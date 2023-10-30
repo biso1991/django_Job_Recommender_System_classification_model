@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .models import job
+from .models import Job
 from django.core.paginator import Paginator
-
+from .form import ApplyJob 
 # Create your views here.
 
 def job_list(request):
-    job_list=job.objects.all()
+    job_list=Job.objects.all()
     print("#####################################",job_list)
     # Show 1 contacts per page.
     paginator = Paginator(job_list, 1) 
@@ -22,10 +22,16 @@ def job_list(request):
 
 
 def job_details(request, slug):
-    only_job = job.objects.get(slug=slug) # return get 1 response for job but return  filter multi jobs 
-    print("###################################################",only_job.id)
+    only_job = Job.objects.get(slug=slug) # return get 1 response for job but return  filter multi jobs 
+    print("###################################################",only_job)
+    # if request.method == "POST":
+    #     pass
+    # else:
+    #     form = ApplyJob()
     context={
-        "unique_job":only_job
+        "unique_job":only_job,
+        "form":form,
+
 
     }
     return render(request,"job/job_details.html",context )

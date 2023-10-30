@@ -25,9 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('jobs/', include('job.urls',namespace='jobs')),
 ]
-    # ... the rest of your URLconf goes here ..
-urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    # ... the rest of your URLconf goes here ...
+#     # ... the rest of your URLconf goes here ..
+# urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#     # ... the rest of your URLconf goes here ...
 
-urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -2,7 +2,7 @@ from django.db import models
 import uuid
 import os
 from django.utils.text import slugify
-# Create your models here.
+# # Create your models here.
 '''django model field
     -html widget
     -validation 'email or not'
@@ -28,7 +28,7 @@ JOB_TYPE=(
     ('Full Time', 'Full time' ),
     ('Part Time', 'Part Time'),
 )
-class job(models.Model):# jobs table 
+class Job(models.Model):# jobs table 
     # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title= models.CharField(max_length=30)# column
     # location
@@ -45,9 +45,20 @@ class job(models.Model):# jobs table
     
     def save (self, *args, **kwargs) :
         self.slug = slugify(self.title)
-        super(job, self).save(*args,**kwargs)   # 
+        super(Job, self).save(*args,**kwargs)   # 
     
     
     def __str__(self):
         return self.title
 
+class User_apply_job(models.Model): 
+    apply = models.ForeignKey("Job", verbose_name=("appl_job"), on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    email=models.EmailField( max_length=50)
+    website = models.URLField()
+    cv = models.FileField( upload_to="cv/", max_length=100)
+    coverletter = models.TextField(max_length=3000)
+    create_at = models.DateField( auto_now=True)
+    
+    def __str__(self):
+        return self.name

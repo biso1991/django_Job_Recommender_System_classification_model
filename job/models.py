@@ -52,13 +52,13 @@ class Job(models.Model):# jobs table
         return self.title
 
 class User_apply_job(models.Model): 
-    apply = models.ForeignKey("Job", verbose_name=("appl_job"), on_delete=models.CASCADE)
+    apply = models.ForeignKey(Job, related_name=("appl_job"), on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=50)
     email=models.EmailField( max_length=50)
     website = models.URLField()
-    cv = models.FileField( upload_to="cv/", max_length=100)
+    # cv = models.FileField( upload_to="cv/", max_length=100)
     coverletter = models.TextField(max_length=3000)
     create_at = models.DateField( auto_now=True)
-    
+
     def __str__(self):
         return self.name

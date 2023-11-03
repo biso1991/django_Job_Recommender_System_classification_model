@@ -24,13 +24,26 @@ def job_list(request):
 def job_details(request, slug):
     only_job = Job.objects.get(slug=slug) # return get 1 response for job but return  filter multi jobs 
     print("###################################################",only_job)
-    # if request.method == "POST":
-    #     pass
-    # else:
-    #     form = ApplyJob()
+    #if apply job post or get for sending in table 
+    post_apply=request.method 
+    if post_apply == "POST":
+        # setting data in django model on table and checking and  saved 
+        print('test1')
+        form = ApplyJob(request.POST, request.FILES)
+        if form.is_valid():
+            print('test2')
+            # this steps don't in this line 'commit false' 
+            form_job= form.save(commit=False)
+            # name field 'job'from model Job is only_job 
+            form_job.job = only_job
+            # save job 
+            form_job.save()
+
+    else:
+        form = ApplyJob()
     context={
         "unique_job":only_job,
-        "form":form,
+        "myform":form,
 
 
     }

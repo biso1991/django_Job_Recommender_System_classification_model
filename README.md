@@ -1,5 +1,4 @@
-# django_Job_Recommender_System_classification_model:
-
+# django_Jobs
   # Description:
   Our project aims to assist users in finding the best-fitting job opportunities by analyzing their information and skills. It leverages advanced predictive models to classify and recommend job listings that align with your career goals.
   # Backend Environment: Docker

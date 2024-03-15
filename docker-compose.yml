@@ -11,9 +11,6 @@ services:
   # after checking 
   # # && apt autoremove -y &
   # pip install --upgrade pip &&
-  #               pip install farm-haystack[ocr]==1.4.0 &&
-  #               pip uninstall urllib3  -y && 
-                  # pip install farm-haystack[ocr]==1.4.0
                   # pip install --upgrade pip &&
   web:
     restart: always

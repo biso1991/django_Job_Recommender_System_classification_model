@@ -1,6 +1,6 @@
 # django_Jobs
   # Description:
-Our goal is to empower users to create their careers by simplifying the resume building and application sending process.
+I aim to empower users to create their careers by simplifying the resume building and application sending process.
   # Backend Environment: Docker,docker compose, 
   # Frameworks and Tools:
       asgiref==3.4.1

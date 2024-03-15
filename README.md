@@ -1,7 +1,8 @@
 # django_Jobs
   # Description:
 I aim to empower users to create their careers by simplifying the resume building and application sending process.
-  # Backend Environment: Docker,docker compose, 
+  # Backend Environment: 
+  Docker,docker compose, 
   # Frameworks and Tools:
       asgiref==3.4.1
       beautifulsoup4==4.9.1

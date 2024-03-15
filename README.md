@@ -1,7 +1,7 @@
 # django_Jobs
   # Description:
-  Our project aims to assist users in finding the best-fitting job opportunities by analyzing their information and skills. It leverages advanced predictive models to classify and recommend job listings that align with your career goals.
-  # Backend Environment: Docker
+Our goal is to empower users to create their careers by simplifying the resume building and application sending process.
+  # Backend Environment: Docker,docker compose, 
   # Frameworks and Tools:
       asgiref==3.4.1
       beautifulsoup4==4.9.1
